@@ -1,3 +1,38 @@
+Fork of [https://github.com/andreas1327250/argon2-java]()
+
+* Java 8+
+* No dependency (removed commons-cli)
+* Refactored to be used as a library
+
+
+```java
+public class Example {
+
+    public static void example1() {
+
+        String password = "password";
+        String salt = "somesalt";
+
+        byte[] hash = Argon2.create().hash(password, salt).asBytes();
+    }
+
+    public static void example2() {
+
+        String password = sentFromUser();
+        String encoded = readFromDatabase();
+
+        boolean result = Argon2().checkHash( encoded, password );
+    }
+}
+```
+
+
+License: MIT (Same as original)
+
+
+================ ↓↓↓ Original Documentation ↓↓↓ ================
+
+
 # Argon2 Java implementation
 
 This is a pure Java implementation of [Argon2](https://github.com/P-H-C/phc-winner-argon2). It targets Java 8.
